@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="fondo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="814.0" styleClass="pane" stylesheets="@../../../estilos/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.cafeteria.PrimaryController">
+   <children>
+      <Button fx:id="btnRecargar" layoutX="86.0" layoutY="406.0" mnemonicParsing="false" onAction="#recargarSaldo" prefHeight="40.0" prefWidth="91.0" text="Recargar">
+         <styleClass>
+            <String fx:value="boton" />
+            <String fx:value="botonPresionado" />
+         </styleClass></Button>
+      <TableView fx:id="tblCafePedido" layoutX="282.0" layoutY="259.0" prefHeight="200.0" prefWidth="499.0" style="-fx-background-color: FFD8C3; -fx-border-color: black; -fx-border-radius: 7px;">
+        <columns>
+          <TableColumn fx:id="colTipo" prefWidth="117.0" text="Tipo" />
+          <TableColumn fx:id="colTamanio" prefWidth="119.0" styleClass="tabla" text="Tamaño" />
+            <TableColumn fx:id="colPrecio" minWidth="4.0" prefWidth="75.0" styleClass="tabla" text="Precio" />
+            <TableColumn fx:id="colFecha" prefWidth="187.0" styleClass="tabla" text="Fecha" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnEliminarTbl" layoutX="592.0" layoutY="469.0" mnemonicParsing="false" onAction="#eliminarCafe" prefHeight="40.0" prefWidth="91.0" text="Eliminar">
+         <styleClass>
+            <String fx:value="botonCancelar" />
+            <String fx:value="botonCancelarPresionado" />
+         </styleClass></Button>
+      <TextField fx:id="addSaldo" alignment="CENTER" layoutX="90.0" layoutY="353.0" prefHeight="25.0" prefWidth="84.0" promptText="0" styleClass="labels" />
+      <RadioButton fx:id="rbtnCapuccino" layoutX="286.0" layoutY="67.0" mnemonicParsing="false" selected="true" text="Capuccino">
+         <toggleGroup>
+            <ToggleGroup fx:id="tipoCafe" />
+         </toggleGroup></RadioButton>
+      <Label layoutX="99.0" layoutY="251.0" text="Saldo Actual" />
+      <Label fx:id="saldoActual" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="301.0" prefHeight="17.0" prefWidth="185.0" text="0.0€" />
+      <ImageView fitHeight="90.0" fitWidth="140.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imagenCafe" fitHeight="245.0" fitWidth="267.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@coffeMoon.png" />
+         </image></ImageView>
+      <Label layoutX="287.0" layoutY="30.0" text="Tipo" />
+      <Label layoutX="685.0" layoutY="30.0" text="Cantidad" />
+      <TextField fx:id="lbCantidad" alignment="CENTER" layoutX="685.0" layoutY="62.0" prefHeight="25.0" prefWidth="84.0" styleClass="labels" />
+      <Button fx:id="btnPedir" layoutX="457.0" layoutY="126.0" mnemonicParsing="false" onAction="#pedirCafe" prefHeight="40.0" prefWidth="312.0" text="Pedir">
+         <styleClass>
+            <String fx:value="boton" />
+            <String fx:value="botonPresionado" />
+         </styleClass></Button>
+      <Label layoutX="458.0" layoutY="30.0" text="Tamaño" />
+      <RadioButton fx:id="rbtnLatte" layoutX="286.0" layoutY="97.0" mnemonicParsing="false" text="Cafe Latte" toggleGroup="$tipoCafe" />
+      <RadioButton fx:id="rbtnCortado" layoutX="286.0" layoutY="128.0" mnemonicParsing="false" text="Cafe Cortado" toggleGroup="$tipoCafe" />
+      <ComboBox fx:id="cbTamanio" layoutX="457.0" layoutY="63.0" prefWidth="150.0" styleClass="comboBox" />
+      <TextField fx:id="buscarCafe" layoutX="362.0" layoutY="219.0" onAction="#cambiarListener" prefHeight="25.0" prefWidth="421.0" styleClass="labels" />
+      <Label layoutX="278.0" layoutY="221.0" prefHeight="21.0" prefWidth="94.0" text="Buscar cafe:" />
+      <Button fx:id="btnModificarTbl" layoutX="394.0" layoutY="469.0" mnemonicParsing="false" onAction="#modificarCafe" prefHeight="40.0" prefWidth="91.0" text="Modificar">
+         <styleClass>
+            <String fx:value="boton" />
+            <String fx:value="botonPresionado" />
+         </styleClass></Button>
+   </children>
+</AnchorPane>
